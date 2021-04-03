@@ -5,12 +5,21 @@ Trabalho para disciplina de Processamento de imagens do curso de Engenharia de c
 
 ### Contextualização
 ```
-A densidade da mama é comprovadamente relacionada com o risco de desenvolvimento de câncer, uma vez que mulheres com uma maior densidade mamária podem esconder lesões, levando o câncer a ser detectado tardiamente. A escala de densidade chamada BIRADS foi desenvolvida pelo American College of Radiology e informa os radiologistas sobre a diminuição da sensibilidade do exame com o aumento da densidade da mama. BI-RADS definem a densidade como sendo quase inteiramente composta por gordura (densidade I), por tecido fibroglandular difuso (II), por tecido denso heterogênero (III) e por tecido extremamente denso (IV). A mamografia é a principal ferramenta de rastreio do câncer e radiologistas avaliam a densidade da mama com base na análise visual das imagens.
+A densidade da mama é comprovadamente relacionada com o risco de desenvolvimento
+de câncer, uma vez que mulheres com uma maior densidade mamária podem esconder
+lesões, levando o câncer a ser detectado tardiamente. A escala de densidade chamada
+BIRADS foi desenvolvida pelo American College of Radiology e informa os radiologistas
+sobre a diminuição da sensibilidade do exame com o aumento da densidade da mama.
+BI-RADS definem a densidade como sendo quase inteiramente composta por gordura (densidade I),
+por tecido fibroglandular difuso (II), por tecido denso heterogênero (III) e por tecido
+extremamente denso (IV). A mamografia é a principal ferramenta de rastreio do câncer e
+radiologistas avaliam a densidade da mama com base na análise visual das imagens.
 ```
 
 ### Objetivo Geral
 ```
-Implementar um aplicativo que leia imagens de exames mamográficos e possibilite o reconhecimento automático da densidade da mama, utilizando técnicas de descrição por textura.
+Implementar um aplicativo que leia imagens de exames mamográficos e possibilite o
+reconhecimento automático da densidade da mama, utilizando técnicas de descrição por textura.
 ```
 
 ### Objetivos especifícos
