@@ -25,9 +25,15 @@ reconhecimento automático da densidade da mama, utilizando técnicas de descri�
 ### Objetivos especifícos
 
 * Primeira parte:
-    - [ ] Ler e visualizar imagens pelo menos nos formatos PNG e TIFF. As imagens podem ter qualquer resolução e número de tons de cinza
+    - [x] Ler e visualizar imagens pelo menos nos formatos PNG e TIFF. As imagens podem ter qualquer resolução e número de tons de cinza
     - [ ] Exibir a imagem em uma janela, com opção de zoom;
     - [ ] Selecionar com o mouse uma região de interesse de 128 x 128 pixels a ser reconhecida. Mostrar o contorno da região na cor azul;
     - [ ] Oferecer uma opção para diminuir a resolução da região para 64 x 64 ou 32 x 32 pixels exibindo o resultado;
     - [ ] Oferecer uma opção para diminuir a quantização da região para 256, 32 ou 16 tons de cinza, exibindo o resultado;
     - [ ] Oferecer opção para equalizar a região selecionada.
+
+### Desenvolvimento
+
+Para alcançar o objetivo do trabalho, foi escolhido a biblioteca
+[Pillow](https://python-pillow.org/) que tem como foco a manipulação e processamento de imagens.
+Para a criação da interface gráfica, será usada a biblioteca [Tkinter]() pela facilidade de implementação.
