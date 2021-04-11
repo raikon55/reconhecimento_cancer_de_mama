@@ -36,4 +36,4 @@ reconhecimento automático da densidade da mama, utilizando técnicas de descri�
 
 Para alcançar o objetivo do trabalho, foi escolhido a biblioteca
 [Pillow](https://python-pillow.org/) que tem como foco a manipulação e processamento de imagens.
-Para a criação da interface gráfica, será usada a biblioteca [Tkinter]() pela facilidade de implementação.
+Para a criação da interface gráfica, será usada a biblioteca [PySide6](https://doc.qt.io/qtforpython-6) pela facilidade de implementação.
