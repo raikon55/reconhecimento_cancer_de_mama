@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>729</width>
+    <height>564</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="__imageWidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>671</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>470</y>
+      <width>320</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QPushButton" name="__resize32x32Button">
+     <property name="text">
+      <string>32x32</string>
+     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">__imageManipulationGroup</string>
+     </attribute>
+    </widget>
+    <widget class="QPushButton" name="__resize64x64Button">
+     <property name="text">
+      <string>64x64</string>
+     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">__imageManipulationGroup</string>
+     </attribute>
+    </widget>
+    <widget class="QPushButton" name="__originalImageButton">
+     <property name="text">
+      <string>Recover</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="__equalizeButton">
+     <property name="text">
+      <string>Equalize</string>
+     </property>
+     <attribute name="buttonGroup">
+      <string notr="true">__imageManipulationGroup</string>
+     </attribute>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="__menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>729</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="__menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="__actionOpen_Image"/>
+    <addaction name="__actionClose_Image"/>
+    <addaction name="__actionQuit"/>
+   </widget>
+   <addaction name="__menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="__actionOpen_Image">
+   <property name="text">
+    <string>Open Image...</string>
+   </property>
+  </action>
+  <action name="__actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="__actionClose_Image">
+   <property name="text">
+    <string>Close Image</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="__imageManipulationGroup"/>
+ </buttongroups>
+</ui>
