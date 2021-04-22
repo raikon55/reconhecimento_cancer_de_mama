@@ -65,14 +65,14 @@ class ImageHandler:
     def temporary_image(self, is_zoom: bool):
         if self.__tempImage is None and is_zoom:
             self.__tempImage = self.__interfaceImage.copy()
-            self.in_zoom = True
+            self.__in_zoom = True
         else:
             if self.__tempImage is not None:
                 self.__interfaceImage = self.__tempImage.copy()
             else:
                 self.normalize(self.__originalImage)
             self.__tempImage = None
-            self.in_zoom = False
+            self.__in_zoom = False
 
     def get_info(self):
         print('\nAttributes viewed image\n'
