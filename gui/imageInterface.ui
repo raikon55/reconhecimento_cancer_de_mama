@@ -14,17 +14,14 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="__imageWidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>671</width>
-      <height>431</height>
+      <x>230</x>
+      <y>120</y>
+      <width>321</width>
+      <height>31</height>
      </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
     </property>
    </widget>
    <widget class="QSplitter" name="splitter">
