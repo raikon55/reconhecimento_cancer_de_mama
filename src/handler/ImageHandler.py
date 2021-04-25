@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from PIL import Image, ImageQt
+from PIL import Image, ImageQt, ImageOps
 
 
 class ImageHandler:
@@ -47,12 +47,11 @@ class ImageHandler:
 
     def zoom_in(self, region: tuple = (0, 0)) -> Image:
         self.temporary_image(True)
-        print(region)
         zoom_region = (
             self.ZOOM_RATIO[0] + region[0], self.ZOOM_RATIO[1] + region[1],
-            (self.ZOOM_RATIO[2] + region[0]) * , self.ZOOM_RATIO[3] + region[1]
+            self.ZOOM_RATIO[2] + region[0], self.ZOOM_RATIO[3] + region[1]
         )
-
+        print(zoom_region)
         self.__interfaceImage = self.__interfaceImage.crop(zoom_region).resize(self.IMAGE_SIZE)
 
         return self.__interfaceImage
@@ -67,7 +66,8 @@ class ImageHandler:
             self.__interfaceImage = self.__interfaceImage.resize((new_size, new_size))
         return self.__interfaceImage
 
-
+    def equalize(self) -> Image:
+        self.__interfaceImage = ImageOps.equalize(self.__interfaceImage)
 
     def temporary_image(self, is_zoom: bool) -> None:
         if self.__tempImage is None and is_zoom:

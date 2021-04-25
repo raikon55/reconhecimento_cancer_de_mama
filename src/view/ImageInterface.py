@@ -151,7 +151,8 @@ class ImageInterface(QMainWindow):
             return
 
     def equalize(self) -> None:
-        print(u'equalize')
+        self.__imageHandler.equalize()
+        self.load_image(can_update=False)
 
     def is_equal_image(self, filename: str) -> bool:
         return self.__filename == filename
