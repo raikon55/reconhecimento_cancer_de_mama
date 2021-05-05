@@ -4,7 +4,6 @@ from PIL import Image, ImageQt, ImageOps
 
 
 class ImageHandler:
-    IMAGE_SIZE: tuple = (1280, 720)
     ZOOM_RATIO: tuple = (0, 0, 128, 128)
 
     __ratioOriginalToInterface: tuple
@@ -13,6 +12,7 @@ class ImageHandler:
     __interfaceImage: Image
     __originalImage: Image
     __filename: str
+    __imageSize: tuple = (1280, 720)
 
     def __init__(self, filename: str):
         self.__filename = filename
@@ -29,10 +29,16 @@ class ImageHandler:
     def get_file_path(self) -> str:
         return self.__filename
 
+    def set_image_size(self, size: tuple = (1280, 720)) -> None:
+        self.__imageSize = size
+
+    def get_image_size(self) -> tuple:
+        return self.__interfaceImage.size
+
     def normalize(self, image: Image) -> Image:
         ratio = (
-            image.width // self.IMAGE_SIZE[0],
-            image.height // self.IMAGE_SIZE[1]
+            image.width // self.__imageSize[0],
+            image.height // self.__imageSize[1]
         )
         self.__ratioOriginalToInterface = (
             1 if ratio[0] < 1 else ratio[0],
@@ -40,7 +46,7 @@ class ImageHandler:
         )
 
         self.__interfaceImage = image.resize(
-            self.IMAGE_SIZE if ratio[0] > 1 and ratio[1] > 1 else image.size
+            self.__imageSize if ratio[0] > 1 and ratio[1] > 1 else image.size
         )
 
         return self.__interfaceImage
@@ -51,8 +57,7 @@ class ImageHandler:
             self.ZOOM_RATIO[0] + region[0], self.ZOOM_RATIO[1] + region[1],
             self.ZOOM_RATIO[2] + region[0], self.ZOOM_RATIO[3] + region[1]
         )
-        print(zoom_region)
-        self.__interfaceImage = self.__interfaceImage.crop(zoom_region).resize(self.IMAGE_SIZE)
+        self.__interfaceImage = self.__interfaceImage.crop(zoom_region).resize((128*5, 128*5))
 
         return self.__interfaceImage
 
@@ -68,6 +73,7 @@ class ImageHandler:
 
     def equalize(self) -> Image:
         self.__interfaceImage = ImageOps.equalize(self.__interfaceImage)
+        return self.__interfaceImage
 
     def temporary_image(self, is_zoom: bool) -> None:
         if self.__tempImage is None and is_zoom:
