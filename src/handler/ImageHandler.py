@@ -24,7 +24,8 @@ class ImageHandler:
         return self.__originalImage if original else self.__interfaceImage
 
     def get_qt_image(self, original: bool = False) -> ImageQt:
-        return ImageQt.toqimage(self.normalize(self.__originalImage)) if original else ImageQt.toqimage(self.__interfaceImage)
+        return ImageQt.toqimage(self.normalize(self.__originalImage)) \
+            if original else ImageQt.toqimage(self.__interfaceImage)
 
     def get_file_path(self) -> str:
         return self.__filename
@@ -63,6 +64,11 @@ class ImageHandler:
 
     def zoom_out(self) -> Image:
         self.temporary_image(False)
+        return self.__interfaceImage
+
+    def gray_scale(self, scale: int) -> Image:
+        self.temporary_image(True)
+        self.__interfaceImage = self.__interfaceImage.quantize(scale)
         return self.__interfaceImage
 
     def new_resolution(self, new_size: int) -> Image:

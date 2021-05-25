@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-
 import sys
+
 from PySide6 import QtWidgets
+
 from src.view.ImageInterface import ImageInterface
 
 if __name__ == "__main__":
